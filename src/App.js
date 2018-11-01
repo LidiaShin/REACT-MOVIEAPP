@@ -41,9 +41,11 @@ _callApi=()=>{
   .then(json => json.data.movies)
   .catch(err =>console.log(err))
 }
+
 render() {
+   const{movies} = this.state;
     return (
-    <div className="App">  
+    <div className={movies ? "App" : "App--loading"}>  
     {this.state.movies? this._renderMovies(): 'Loading!'} 
      </div>
     )
