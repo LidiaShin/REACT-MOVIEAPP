@@ -1,6 +1,8 @@
+ // eslint-disable-next-line 
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './movie.css';
+import LinesEllipsis from 'react-lines-ellipsis'
 
 function Movie({title,poster,genres,synopsis}){
 return(
@@ -13,17 +15,32 @@ return(
 
         <div className="Movie_Columns">        
             <h1>{title}</h1>  
+
             <div ClassName="Movie_Genre">
             {genres.map((genre,index) => <MovieGenre genre={genre} key={index} />   )}          
             </div>
-            <p className="Movie_Synopsis">
-             {synopsis}
-            </p>
+
+            <div className="Movie_Synopsis">
+
+             <LinesEllipsis
+             text={synopsis}
+             maxLine='3'
+             ellipsis=' ...'
+             trimRight
+             basedOn='letters'
+             />
+
+            </div>
         </div>
 
     </div>
     )
 }
+
+
+
+
+
 
 
 
@@ -37,7 +54,6 @@ function MoviePoster({poster,alt}){
 function MovieGenre({genre}){
     return(
      <span className="Movie_Genre">{genre}</span>
-
     )
 }
 

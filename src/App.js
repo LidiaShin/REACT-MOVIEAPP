@@ -52,11 +52,8 @@ render() {
    }
   }
   
-  function MoviePoster({poster}){
-    return (
-      <img src={poster} alt="Movie Poster" />
-    )
-  }
+
+  
 
 
  
