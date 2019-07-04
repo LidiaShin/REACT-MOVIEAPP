@@ -6,15 +6,18 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-lines-ellipsis": "^0.13.2",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +31,6 @@
   "homepage": "https://LidiaShin.github.io/REACT-MOVIEAPP",
   "devDependencies": {
     "gh-pages": "^2.0.1"
-  }
+  },
+  "snyk": true
 }
